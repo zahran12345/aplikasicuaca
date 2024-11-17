@@ -7,72 +7,79 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center; /* Menengahkan secara horizontal */
-    align-items: center; /* Menengahkan secara vertikal */ /* Warna latar belakang utama */
-    background-size: cover; /* Menyesuaikan ukuran gambar latar belakang */
-    background-position: center; /* Memusatkan gambar latar belakang */
-    position: relative; /* Untuk gambar latar belakang */
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffdfdf, #c3e8ff); /* Gradasi warna pastel yang lembut */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Gambar latar belakang dengan efek transisi */
+/* Gambar latar belakang dengan efek blur dan warna yang lebih halus */
 .background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/img/background1.jpg');
-    background-size: cover;
+    background-image: url('/img/latartentang.jpg');
+    background-size: 80% auto;
     background-position: center;
-    z-index: -1; /* Pastikan gambar latar di belakang konten */
-    transition: transform 10s ease, filter 5s ease;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(6px) brightness(1); /* Blur dan pengaturan kecerahan */
+    transition: transform 15s ease, filter 5s ease;
 }
+
+/* Tampilan utama dengan gaya modern */
 .main-content {
-    text-align: center; /* Memusatkan teks */
-    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang konten dengan sedikit transparansi */
+    position: relative;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.9); /* Transparansi lebih ringan */
     padding: 50px;
-    border-radius: 20px; /* Sudut yang lebih melengkung */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan besar */
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(100, 100, 100, 0.15); /* Bayangan lembut */
     width: 80%;
-    max-width: 800px;
-    animation: fadeIn 1.5s ease-out; /* Efek fade-in untuk konten */
+    max-width: 750px;
+    animation: fadeIn 1s ease-out;
 }
 
 .main-content img {
-    border-radius: 50%; /* Membulatkan gambar profil */
-    width: 150px;
-    height: 150px;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
     margin-bottom: 20px;
-    transition: transform 0.3s ease; /* Efek hover pada gambar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
 }
 
 .main-content img:hover {
-    transform: scale(1.1); /* Membesarkan gambar sedikit saat di-hover */
+    transform: scale(1.1);
+    box-shadow: 0px 4px 12px rgba(200, 150, 255, 0.4); /* Warna bayangan pastel */
 }
 
 h2 {
-    font-size: 36px;
-    color: #00796b; /* Warna hijau kebiruan */
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Efek bayangan pada teks */
+    font-size: 34px;
+    color: #5c73e6; /* Warna biru pastel yang lembut */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-size: 18px;
-    color: #333333;
+    font-size: 17px;
+    color: #4a4a4a;
     line-height: 1.6;
-    transition: color 0.3s ease; /* Transisi halus untuk perubahan warna */
+    transition: color 0.3s ease;
 }
 
 p:hover {
-    color: #00796b; /* Mengubah warna teks saat di-hover */
+    color: #5c73e6; /* Mengubah warna teks saat hover */
 }
 
 footer {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 15px;
     color: #888888;
 }
 
@@ -80,7 +87,7 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -89,72 +96,52 @@ footer {
 }
 
 header {
-    
-    background: linear-gradient(90deg, hsl(135, 93%, 43%), #333); /* Gradient yang lebih cerah */
-    padding: 30px; /* Padding lebih besar untuk ruang yang lebih baik */
+    background: linear-gradient(90deg, #ffd1dc, #c3e8ff); /* Gradasi pastel cerah */
+    padding: 16px;
     text-align: center;
-    border-bottom: 5px solid white;
+    border-bottom: 2px solid white;
     width: 100%;
     position: relative;
     z-index: 1;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Bayangan halus di bawah header */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan yang lebih lembut */
 }
 
-
-
 h1 {
-    font-size: 2.5em; /* Ukuran font yang lebih besar untuk judul */
-    color: white; /* Warna teks judul */
-    margin-bottom: 10px; /* Jarak di bawah judul */
+    font-size: 2.3em;
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .nav-penjelasan {
-    display: flex; /* Mengatur navigasi dalam baris */
-    justify-content: center; /* Memusatkan tautan navigasi */
-    gap: 15px; /* Jarak antar tautan */
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
 .nav-penjelasan a {
-    color: white; /* Warna teks tautan */
-    text-decoration: none; /* Menghilangkan garis bawah */
-    padding: 10px 15px; /* Padding untuk tautan */
-    border-radius: 5px; /* Sudut melengkung pada tautan */
-    transition: background-color 0.3s ease; /* Transisi halus */
+    color: #4a4a4a;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #ffebf0; /* Warna latar pastel */
+    transition: background-color 0.3s ease;
 }
 
 .nav-penjelasan a:hover {
-    border: none;
-    background-color: #007BFF; /* Warna latar belakang saat hover */
+    background-color: #cce4ff; /* Warna latar hover pastel */
 }
 
-
-
-
-
-
-/* Tampilan utama dengan efek cahaya */
-.main-content {
-    position: relative; /* Agar efek cahaya bisa diposisikan relatif terhadap elemen ini */
-    text-align: center; /* Memusatkan teks dan form di tengah */
-    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang konten dengan sedikit transparansi */
-    padding: 40px;
-    border-radius: 10px; /* Memberikan sudut melengkung */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan */
-}
-
-/* Efek cahaya di luar */
+/* Efek cahaya di luar main-content */
 .main-content::before {
-    content: ''; /* Membuat elemen pseudo */
-    position: absolute; /* Memposisikan secara absolut */
-    top: -5px; /* Memposisikan sedikit lebih dekat ke atas */
-    left: -5px; /* Memposisikan sedikit lebih dekat ke kiri */
-    right: -5px; /* Memposisikan sedikit lebih dekat ke kanan */
-    bottom: -5px; /* Memposisikan sedikit lebih dekat ke bawah */
-    border-radius: 15px; /* Menyesuaikan sudut melengkung */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); /* Bayangan berwarna hijau */
-    pointer-events: none; /* Agar elemen ini tidak menghalangi interaksi dengan konten */
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(200, 100, 255, 0.3); /* Warna bayangan lembut */
+    pointer-events: none;
 }
-
-
